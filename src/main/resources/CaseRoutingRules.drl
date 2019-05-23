@@ -1,0 +1,13 @@
+//package com.cst.crm.ruleengine;
+package com.rules
+import  com.cst.crm.ruleengine.Case;
+//import com.cst.crm.ruleengine.Action
+
+dialect  "mvel"
+
+rule "CaseRoutingRules"
+    when
+        c : Case(verticalId <= 4)
+    then
+       c.setActionId(1);
+end
